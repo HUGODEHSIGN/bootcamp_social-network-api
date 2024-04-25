@@ -15,13 +15,17 @@ const userSchema = new mongoose.Schema({
   friends: [{ _id: Number }],
 });
 
+userSchema.virtual('friendCount').get(function () {
+  return this.friends.length;
+});
+
 const User = mongoose.model('User', userSchema);
 
-User.create({
-  title: 'test title',
-  email: 'asdf@gmail.com',
-  thoughts: [{ _id: 1 }, { _id: 2 }, { _id: 3 }],
-  friends: [{ _id: 1 }, { _id: 2 }, { _id: 3 }],
-}).then((data) => console.log(data));
+// User.create({
+//   title: 'test title',
+//   email: 'asdf@gmail.com',
+//   thoughts: [{ _id: 1 }, { _id: 2 }, { _id: 3 }],
+//   friends: [{ _id: 1 }, { _id: 2 }, { _id: 3 }],
+// }).then((data) => console.log(data));
 
 export default User;
