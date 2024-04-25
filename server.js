@@ -1,4 +1,7 @@
 import express from 'express';
+import db from './config/connection.js';
+
+console.log(db);
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -6,6 +9,8 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.listen(PORT, () => {
-  console.log(`API server is running at http://localhost:${PORT}`);
+db.once('open', () => {
+  app.listen(PORT, () => {
+    console.log(`API server is running at http://localhost:${PORT}`);
+  });
 });
