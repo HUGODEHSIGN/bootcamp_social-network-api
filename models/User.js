@@ -12,8 +12,8 @@ const userSchema = new Schema(
         'Please provide a valid email address',
       ],
     },
-    thoughts: [{ _id: Number }],
-    friends: [{ _id: Number }],
+    thoughts: [{ type: Schema.Types.ObjectId, ref: 'Thought' }],
+    friends: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   },
   {
     toJSON: {
@@ -28,12 +28,5 @@ userSchema.virtual('friendCount').get(function () {
 });
 
 const User = model('User', userSchema);
-
-// User.create({
-//   title: 'test title',
-//   email: 'asdf@gmail.com',
-//   thoughts: [{ _id: 1 }, { _id: 2 }, { _id: 3 }],
-//   friends: [{ _id: 1 }, { _id: 2 }, { _id: 3 }],
-// }).then((data) => console.log(data));
 
 export default User;
