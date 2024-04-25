@@ -1,5 +1,6 @@
 import express from 'express';
 import db from './config/connection.js';
+import User from './models/User.js';
 
 console.log(db);
 
