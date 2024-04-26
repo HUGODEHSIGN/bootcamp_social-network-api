@@ -1,7 +1,10 @@
 import express from 'express';
 import { Thought, User } from '../../models/index.js';
+import reactionRoutes from './reactionRoutes.js';
 
 const router = express.Router();
+
+router.use('/', reactionRoutes);
 
 router.get('/', async (req, res) => {
   try {
