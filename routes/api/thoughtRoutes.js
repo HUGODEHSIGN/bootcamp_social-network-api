@@ -21,4 +21,20 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+router.post('/', async (req, res) => {
+  try {
+    const { thoughtText, username } = req.body;
+
+    const user = await User.findOne({ username });
+
+    const newThought = await Thought.create({ thoughtText, username });
+    const updatedUser = await User.findByIdAndUpdate(user._id.toString(), {
+      $push: { thoughts: newThought._id.toString() },
+    });
+    res.json(newThought);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 export default router;

@@ -94,21 +94,21 @@ export const thoughtData = [
 export const userData = [
   {
     _id: '60fcf22d56e431001f58f450',
-    title: 'JohnDoe',
+    username: 'JohnDoe',
     email: 'johndoe@example.com',
     thoughts: ['60fcf22d56e431001f58f43c', '60fcf22d56e431001f58f43d'],
     friends: ['60fcf22d56e431001f58f453', '60fcf22d56e431001f58f456'],
   },
   {
     _id: '60fcf22d56e431001f58f453',
-    title: 'AliceSmith',
+    username: 'AliceSmith',
     email: 'alice.smith@example.com',
     thoughts: ['60fcf22d56e431001f58f440', '60fcf22d56e431001f58f441'],
     friends: ['60fcf22d56e431001f58f450', '60fcf22d56e431001f58f456'],
   },
   {
     _id: '60fcf22d56e431001f58f456',
-    title: 'BobJohnson',
+    username: 'BobJohnson',
     email: 'bob.johnson@example.com',
     thoughts: ['60fcf22d56e431001f58f444', '60fcf22d56e431001f58f445'],
     friends: ['60fcf22d56e431001f58f450', '60fcf22d56e431001f58f453'],
@@ -118,7 +118,7 @@ export const userData = [
 // --- Example User ---
 
 // {
-//   "title":"EmmaBrown",
+//   "username":"EmmaBrown",
 //   "email":"emma.brown@example.com",
 //   "thoughts":[
 //     "60fcf22d56e431001f58f446",
