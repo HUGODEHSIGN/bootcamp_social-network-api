@@ -12,4 +12,13 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/:id', async (req, res) => {
+  try {
+    const thought = await Thought.findById(req.params.id);
+    res.json(thought);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 export default router;
