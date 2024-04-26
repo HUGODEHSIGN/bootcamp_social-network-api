@@ -114,3 +114,35 @@ export const userData = [
     friends: ['60fcf22d56e431001f58f450', '60fcf22d56e431001f58f453'],
   },
 ];
+
+// --- Example User ---
+
+// {
+//   "title":"EmmaBrown",
+//   "email":"emma.brown@example.com",
+//   "thoughts":[
+//     "60fcf22d56e431001f58f446",
+//     "60fcf22d56e431001f58f447"
+//   ],
+//   "friends":[
+//     "60fcf22d56e431001f58f450",
+//     "60fcf22d56e431001f58f453"
+//   ]
+// }
+
+// --- Example Thought ---
+
+// {
+//   "thoughtText":"Just booked tickets for my dream vacation!",
+//   "username":"EmmaBrown",
+//   "reactions":[
+//     {
+//       "reactionBody":"That sounds amazing!",
+//       "username":"travelenthusiast"
+//     },
+//     {
+//       "reactionBody":"Where are you going?",
+//       "username":"curiousvoyager"
+//     }
+//   ]
+// }
