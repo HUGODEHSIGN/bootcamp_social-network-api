@@ -50,4 +50,13 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+router.delete('/:id', async (req, res) => {
+  try {
+    const deletedThought = await Thought.findByIdAndDelete(req.params.id);
+    res.json(deletedThought);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 export default router;
