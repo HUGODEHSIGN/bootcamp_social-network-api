@@ -12,6 +12,19 @@ router.post('/:thoughtId/reactions', async (req, res) => {
     );
     res.json(updatedThought);
   } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.delete('/:thoughtId/reactions/:reactionId', async (req, res) => {
+  try {
+    const updatedThought = await Thought.findByIdAndUpdate(
+      req.params.thoughtId,
+      { $pull: { reactions: { _id: req.params.reactionId } } },
+      { new: true }
+    );
+    res.json(updatedThought);
+  } catch (err) {
     console.error(err);
     res.status(500).json(err);
   }
