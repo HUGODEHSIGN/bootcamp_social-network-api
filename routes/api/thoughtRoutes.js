@@ -37,4 +37,17 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.put('/:id', async (req, res) => {
+  try {
+    const updatedThought = await Thought.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+    res.json(updatedThought);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 export default router;
