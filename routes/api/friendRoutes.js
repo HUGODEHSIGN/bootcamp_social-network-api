@@ -3,7 +3,7 @@ import { User } from '../../models/index.js';
 
 const router = express.Router();
 
-router.put('/:userId/friends/:friendId', async (req, res) => {
+router.post('/:userId/friends/:friendId', async (req, res) => {
   try {
     const updatedUser = await User.findByIdAndUpdate(
       req.params.userId,
